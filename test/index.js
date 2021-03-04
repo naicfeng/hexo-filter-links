@@ -85,11 +85,13 @@ describe('hexo-filter-links', () => {
       '<a href="https://example.com">Example Domain</a>',
       '3. Ignore links whose hostname is included in exclude',
       '<a href="https://example.org">Example Domain</a>',
-      '<a href="https://test.example.net">Example Domain</a>'
+      '<a href="https://test.example.net">Example Domain</a>',
+      '4. Wildcard hostname is included in exclude',
+      '<a href="https://test.example2.net">Example Domain</a>'
     ].join('\n');
 
     it('String', () => {
-      hexo.config.links.exclude = ['example.org', 'test.example.net'];
+      hexo.config.links.exclude = ['example.org', 'test.example.net', '*.example2.net'];
 
       const result = linksFilter(content);
 
@@ -101,7 +103,9 @@ describe('hexo-filter-links', () => {
         '<a href="https://example.com">Example Domain</a>',
         '3. Ignore links whose hostname is included in exclude',
         '<a href="https://example.org">Example Domain</a>',
-        '<a href="https://test.example.net">Example Domain</a>'
+        '<a href="https://test.example.net">Example Domain</a>',
+        '4. Wildcard hostname is included in exclude',
+        '<a href="https://test.example2.net">Example Domain</a>'
       ].join('\n'));
     });
 
@@ -118,7 +122,9 @@ describe('hexo-filter-links', () => {
         '<a href="https://example.com">Example Domain</a>',
         '3. Ignore links whose hostname is included in exclude',
         '<a href="https://example.org">Example Domain</a>',
-        '<a href="https://example.com/go/?aHR0cHM6Ly90ZXN0LmV4YW1wbGUubmV0" rel="noopener external nofollow noreferrer">Example Domain</a>'
+        '<a href="https://example.com/go/?aHR0cHM6Ly90ZXN0LmV4YW1wbGUubmV0" rel="noopener external nofollow noreferrer">Example Domain</a>',
+        '4. Wildcard hostname is included in exclude',
+        '<a href="https://example.com/go/?aHR0cHM6Ly90ZXN0LmV4YW1wbGUyLm5ldA==" rel="noopener external nofollow noreferrer">Example Domain</a>'
       ].join('\n'));
     });
   });

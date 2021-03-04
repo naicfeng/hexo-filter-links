@@ -26,6 +26,7 @@ links:
   exclude:
     - 'exclude1.com'
     - 'exclude2.com'
+    - '*.exclude3.com' #need version >= 1.0.4
 ```
 
 - **enable** - Enable the plugin. Default value is `true`.
@@ -34,3 +35,4 @@ links:
   - 'site' - Modify external links of whole sites
 - **exclude** - Exclude hostname. Specify subdomain when applicable, including `www`.
   - 'exclude1.com' does not apply to `www.exclude1.com` nor `en.exclude1.com`.
+  - '*.exclude2.com' does apply to `www.exclude2.com` nor `en.exclude2.com`. need version >= 1.0.4
