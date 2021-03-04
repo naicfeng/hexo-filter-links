@@ -1,0 +1,46 @@
+{
+  "name": "hexo-filter-links",
+  "version": "1.0.2",
+  "description": "Hexo Modify External link to Inner link",
+  "main": "index.js",
+  "directories": {
+    "lib": "./lib",
+    "generator": "./generator"
+  },
+  "files": [
+    "lib/",
+    "generator/",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 10.13.0"
+  },
+  "scripts": {
+    "eslint": "eslint .",
+    "test": "mocha test/index.js"
+  },
+  "repository": "naicfeng/hexo-filter-links",
+  "keywords": [
+    "hexo",
+    "seo",
+    "hexo-plugin",
+    "hexo-filter",
+    "link"
+  ],
+  "author": "WeiCN <naicfeng@gmail.com> (https://cuojue.org)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/naicfeng/hexo-filter-links/issues"
+  },
+  "homepage": "https://cuojue.org/read/hexo-filter-links.html",
+  "devDependencies": {
+    "chai": "^4.3.3",
+    "eslint": "^7.5.0",
+    "eslint-config-hexo": "^4.1.0",
+    "hexo": "hexojs/hexo",
+    "mocha": "^8.3.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2"
+  }
+}
