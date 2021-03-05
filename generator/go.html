@@ -259,7 +259,7 @@ var Base64 = {
 		return t
 	}
 }
-var jump_url=Base64.decode(window.location.search.substr(1));
+var jump_url=Base64.decode(location.hash.slice(1));
 
 if(jump_url.match(/http(?:s)?:\/\/.+/i)===null){
 	document.title='参数错误，正在返回首页...';
