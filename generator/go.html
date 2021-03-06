@@ -23,6 +23,46 @@ body {
 	background-color: #fff;
 }
 
+@-moz-keyframes fadein {
+	from {
+		opacity: 0
+	}
+
+	to {
+		opacity: 1
+	}
+}
+
+@-webkit-keyframes fadein {
+	from {
+		opacity: 0
+	}
+
+	to {
+		opacity: 1
+	}
+}
+
+@-o-keyframes fadein {
+	from {
+		opacity: 0
+	}
+
+	to {
+		opacity: 1
+	}
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0
+	}
+
+	to {
+		opacity: 1
+	}
+}
+
 .loader-inner {
 	position: absolute;
 	z-index: 300;
@@ -191,6 +231,7 @@ body {
 	display: block;
 	font-size: 18px;
 }
+
     </style>
 </head>
 
@@ -260,6 +301,7 @@ var Base64 = {
 	}
 }
 var jump_url=Base64.decode(location.hash.slice(1));
+if(jump_url=='')jump_url=Base64.decode(window.location.search.substr(1));
 
 if(jump_url.match(/http(?:s)?:\/\/.+/i)===null){
 	document.title='参数错误，正在返回首页...';
