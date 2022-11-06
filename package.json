@@ -1,6 +1,6 @@
 {
   "name": "hexo-filter-links",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Hexo Modify External link to Inner link",
   "main": "index.js",
   "directories": {
